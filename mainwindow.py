@@ -38,6 +38,8 @@ class MainWindow(QMainWindow):
             self.ui.path_label.setText(self.file_path)
 
     def transcribe_file(self):
+        if self.file_path == None:
+            return
         self.ui.status_label.setText("Transcribing, please wait.")
         chosen_language = self.ui.option_language.currentText()
         precision = self.ui.option_precision.currentText()

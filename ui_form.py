@@ -15,37 +15,36 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QHBoxLayout, QLabel,
-    QMainWindow, QMenuBar, QPushButton, QSizePolicy,
-    QSpacerItem, QStatusBar, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QHBoxLayout,
+    QLabel, QMainWindow, QMenuBar, QPushButton,
+    QSizePolicy, QSpacerItem, QStatusBar, QVBoxLayout,
+    QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(534, 539)
+        MainWindow.resize(520, 586)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayoutWidget = QWidget(self.centralwidget)
-        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(10, 0, 511, 491))
-        self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
+        self.gridLayout = QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Preferred)
 
         self.verticalLayout_2.addItem(self.verticalSpacer_5)
 
-        self.openFileButton = QPushButton(self.verticalLayoutWidget)
+        self.openFileButton = QPushButton(self.centralwidget)
         self.openFileButton.setObjectName(u"openFileButton")
         font = QFont()
         font.setPointSize(11)
         font.setBold(True)
         self.openFileButton.setFont(font)
 
-        self.verticalLayout_2.addWidget(self.openFileButton)
+        self.verticalLayout_2.addWidget(self.openFileButton, 0, Qt.AlignHCenter)
 
         self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Preferred)
 
@@ -53,7 +52,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.label = QLabel(self.verticalLayoutWidget)
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_2)
+
+        self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
         self.label.setEnabled(True)
         font1 = QFont()
@@ -65,12 +68,16 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.label)
 
-        self.path_label = QLabel(self.verticalLayoutWidget)
+        self.path_label = QLabel(self.centralwidget)
         self.path_label.setObjectName(u"path_label")
         self.path_label.setAlignment(Qt.AlignCenter)
         self.path_label.setWordWrap(True)
 
         self.horizontalLayout_3.addWidget(self.path_label)
+
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer)
 
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_3)
@@ -85,9 +92,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer_4)
+
         self.verticalLayout_5 = QVBoxLayout()
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.label_4 = QLabel(self.verticalLayoutWidget)
+        self.label_4 = QLabel(self.centralwidget)
         self.label_4.setObjectName(u"label_4")
         font2 = QFont()
         font2.setPointSize(10)
@@ -100,7 +111,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.label_4)
 
-        self.label_2 = QLabel(self.verticalLayoutWidget)
+        self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
         font3 = QFont()
         font3.setPointSize(10)
@@ -118,7 +129,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4 = QVBoxLayout()
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.option_language = QComboBox(self.verticalLayoutWidget)
+        self.option_language = QComboBox(self.centralwidget)
         self.option_language.addItem("")
         self.option_language.addItem("")
         self.option_language.addItem("")
@@ -126,7 +137,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addWidget(self.option_language)
 
-        self.option_precision = QComboBox(self.verticalLayoutWidget)
+        self.option_precision = QComboBox(self.centralwidget)
         self.option_precision.addItem("")
         self.option_precision.addItem("")
         self.option_precision.addItem("")
@@ -138,6 +149,10 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout.addLayout(self.verticalLayout_4)
+
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_3)
 
 
         self.verticalLayout_3.addLayout(self.horizontalLayout)
@@ -154,25 +169,21 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
-
-        self.horizontalLayout_6.addItem(self.horizontalSpacer)
-
-        self.transcribeButton = QPushButton(self.verticalLayoutWidget)
+        self.transcribeButton = QPushButton(self.centralwidget)
         self.transcribeButton.setObjectName(u"transcribeButton")
         self.transcribeButton.setBaseSize(QSize(100, 0))
         self.transcribeButton.setFont(font)
 
-        self.horizontalLayout_6.addWidget(self.transcribeButton)
-
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
-
-        self.horizontalLayout_6.addItem(self.horizontalSpacer_2)
+        self.horizontalLayout_6.addWidget(self.transcribeButton, 0, Qt.AlignHCenter|Qt.AlignVCenter)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout_6)
 
-        self.label_3 = QLabel(self.verticalLayoutWidget)
+        self.verticalSpacer_6 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Minimum)
+
+        self.verticalLayout.addItem(self.verticalSpacer_6)
+
+        self.label_3 = QLabel(self.centralwidget)
         self.label_3.setObjectName(u"label_3")
         font4 = QFont()
         font4.setItalic(True)
@@ -181,7 +192,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.label_3)
 
-        self.status_label = QLabel(self.verticalLayoutWidget)
+        self.status_label = QLabel(self.centralwidget)
         self.status_label.setObjectName(u"status_label")
         self.status_label.setFont(font)
         self.status_label.setTextFormat(Qt.AutoText)
@@ -189,14 +200,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.status_label)
 
-        self.verticalSpacer = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Preferred)
+        self.verticalSpacer = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.MinimumExpanding)
 
         self.verticalLayout.addItem(self.verticalSpacer)
+
+
+        self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 534, 22))
+        self.menubar.setGeometry(QRect(0, 0, 520, 22))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
